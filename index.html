@@ -2,13 +2,39 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-    <title>`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`</title>
+    <title>Test jquery</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function(){
+
+   var boton1 = $("#boton1");
+   var textarea1 = $("#textarea1");
+   var input1 = $("#input1");
+   
+   boton1.click(function(){
     
+   var caretPos = document.getElementById("textarea1").selectionStart;
+   var t = textarea1.val();
+   
+    textarea1.val(t.substring(0,caretPos) + " "+ input1.val() + " "+ t.substring(caretPos));
+    
+    
+  });
+   
+   
+}); 
+    </script>
 </head>
 <body>
-<p> Dummy ide </p>
+<p><h1>Dummy ide</h1>  </p>
+<p>Input que quieres agregar</p>
 <div>
-    <textarea name="" id= rows="8" cols="40">Escribe aqui</textarea>
+    <input type="text" id="input1" value="" />
+</div>
+<p>Pon el cursor donde quieres agregar el texto</p>
+<div>
+    <textarea  id="textarea1" rows="8" cols="40">Escribe aqui</textarea>
+    
 </div>
 <div>
     <button id="boton1">Agrega pos a textarea</button>
